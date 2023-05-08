@@ -14,6 +14,11 @@ config/name="SOA"
 run/main_scene="res://scenes/Fase_1.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1600
+window/size/height=1024
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
