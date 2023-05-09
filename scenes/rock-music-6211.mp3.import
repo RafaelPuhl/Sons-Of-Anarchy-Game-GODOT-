@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rock-music-6211.mp3-2f13d38cf5357963a37bcfa69fcee28b.mp3str"
+
+[deps]
+
+source_file="res://scenes/rock-music-6211.mp3"
+dest_files=[ "res://.import/rock-music-6211.mp3-2f13d38cf5357963a37bcfa69fcee28b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
