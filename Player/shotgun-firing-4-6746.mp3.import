@@ -11,5 +11,5 @@ dest_files=[ "res://.import/shotgun-firing-4-6746.mp3-c097ab2a66d3d4f1f42c5d7173
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
