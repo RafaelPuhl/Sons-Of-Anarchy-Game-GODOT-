@@ -11,9 +11,13 @@ position = Vector2( 63, 40 )
 
 [node name="Bullet" type="RigidBody2D" parent="."]
 position = Vector2( -346, 263 )
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+light_mask = 2
 position = Vector2( 340, -284 )
 scale = Vector2( 1, 0.97 )
 shape = SubResource( 1 )
