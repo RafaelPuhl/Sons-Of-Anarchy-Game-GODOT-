@@ -1,4 +1,5 @@
 extends KinematicBody2D
+export (PackedScene) var bullet : PackedScene
 
 const GRAVIDADE = 2500
 var velocidade = Vector2.ZERO
@@ -6,6 +7,7 @@ var max_speed = 600
 var desaceleration_rate = 200
 var desaceleration_timer = 0.0
 var shooting = false
+var direction = 2.8
 
 onready var sprite = $AnimatedSprite
 onready var shootSound = $ShootSound
@@ -60,3 +62,9 @@ func _on_AnimatedSprite_animation_finished() -> void:
 	if sprite.animation == "fire":
 		shooting = true
 		print(shooting)
+		var p = bullet.instance()
+		p.global_position = global_position  + Vector2(50 * direction, 0)
+		owner.add_child(p)
+
+
+

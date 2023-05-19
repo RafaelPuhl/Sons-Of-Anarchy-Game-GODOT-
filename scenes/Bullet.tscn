@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Elements/Municao_player.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Bullet.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27, 4.12371 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 63, 40 )
+
+[node name="Bullet" type="RigidBody2D" parent="."]
+position = Vector2( -346, 263 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+position = Vector2( 340, -284 )
+scale = Vector2( 1, 0.97 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Bullet"]
+position = Vector2( 339, -284.813 )
+scale = Vector2( 0.16763, 0.123749 )
+texture = ExtResource( 1 )
