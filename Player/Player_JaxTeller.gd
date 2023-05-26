@@ -11,7 +11,7 @@ var direction = 2.8
 
 onready var sprite = $AnimatedSprite
 onready var shootSound = $ShootSound
-
+	
 func _ready() -> void:
 	pass
 
