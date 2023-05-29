@@ -42,10 +42,10 @@ tile_set = SubResource( 2 )
 collision_layer = 8
 collision_mask = 7
 format = 1
-tile_data = PoolIntArray( 851996, 0, 0, 983031, 0, 0, 983033, 0, 0, 983035, 0, 0, 983037, 0, 0, 983039, 0, 0, 917505, 0, 0, 917507, 0, 0, 917509, 0, 0, 917511, 0, 0, 917513, 0, 0, 917515, 0, 0, 917517, 0, 0, 917519, 0, 0, 917521, 0, 0, 917523, 0, 0, 917525, 0, 0, 917527, 0, 0, 917529, 0, 0, 917531, 0, 0, 917534, 0, 0, 917536, 0, 0, 917538, 0, 0, 917540, 0, 0, 917542, 0, 0, 917544, 0, 0 )
+tile_data = PoolIntArray( 851996, 0, 0, 983031, 0, 0, 983033, 0, 0, 983035, 0, 0, 983037, 0, 0, 983039, 0, 0, 917505, 0, 0, 917507, 0, 0, 917509, 0, 0, 917511, 0, 0, 917513, 0, 0, 917515, 0, 0, 917517, 0, 0, 917519, 0, 0, 917521, 0, 0, 917523, 0, 0, 917525, 0, 0, 917527, 0, 0, 917529, 0, 0, 917531, 0, 0, 917534, 0, 0, 917536, 0, 0, 917538, 0, 0, 917540, 0, 0, 917542, 0, 0, 917544, 0, 0, 917546, 0, 0, 917548, 0, 0, 917550, 0, 0, 917552, 0, 0, 917554, 0, 0, 917556, 0, 0, 917558, 0, 0, 917560, 0, 0, 917562, 0, 0, 917564, 0, 0, 917566, 0, 0, 917568, 0, 0, 917570, 0, 0, 917572, 0, 0, 917574, 0, 0, 917576, 0, 0, 917578, 0, 0, 917580, 0, 0, 917582, 0, 0, 917584, 0, 0, 917586, 0, 0, 917588, 0, 0, 917590, 0, 0, 917592, 0, 0, 917594, 0, 0, 917596, 0, 0, 917598, 0, 0, 917600, 0, 0 )
 
 [node name="Player_JaxTeller" parent="." instance=ExtResource( 3 )]
-position = Vector2( 17, 202 )
+position = Vector2( 17, 800 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -62,11 +62,11 @@ autostart = true
 motion_mirroring = Vector2( 100, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1224, -64 )
 scale = Vector2( 4, 3 )
 texture = ExtResource( 7 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 1 )
 motion_mirroring = Vector2( 3000, 0 )
 
 [node name="montanhas" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
@@ -74,8 +74,28 @@ position = Vector2( 1160, 464 )
 texture = ExtResource( 5 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 5000, 0 )
 
 [node name="nuvem" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 3500, 0 )
+
+[node name="nuvem" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 851, 136 )
+scale = Vector2( 1.76154, 1 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 5700, 0 )
+
+[node name="nuvem" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 2416, 16 )
+scale = Vector2( 1.76154, 1 )
 texture = ExtResource( 6 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
