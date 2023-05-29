@@ -1,12 +1,12 @@
-extends KinematicBody2D
+extends Area2D
 
-var speed = 5000
-var direction = 1  
-var velocidade = Vector2.ZERO
+const SPEED := 5000
+var direction := 1  
+var velocity := Vector2.ZERO
 
 func _ready():
 	pass
 	
 func _physics_process(delta):
-	velocidade = move_and_slide(velocidade,Vector2.UP)
-	velocidade.x = speed
+	velocity.x = SPEED * delta * direction
+	translate(velocity)
