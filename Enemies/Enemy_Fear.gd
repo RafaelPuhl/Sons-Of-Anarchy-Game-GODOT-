@@ -9,5 +9,6 @@ func _ready():
 
 func _physics_process(delta):
 	velocidade.y += GRAVIDADE * delta
+	velocidade.x = 600
 	velocidade = move_and_slide(velocidade,Vector2.UP)
 	
