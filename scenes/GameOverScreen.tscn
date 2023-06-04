@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/Xolonium.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/Xolonium_40.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/GameOverScreen.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.662745, 0.25098, 0.25098, 1 )
@@ -12,24 +14,32 @@ border_color = Color( 0, 0, 0, 1 )
 shadow_size = 50
 
 [node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource( 3 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-margin_right = 1600.0
-margin_bottom = 1024.0
+margin_right = 2752.0
+margin_bottom = 1600.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 1590.0
-margin_bottom = 1014.0
+margin_right = 2742.0
+margin_bottom = 1590.0
+custom_constants/margin_right = 90
+custom_constants/margin_top = 200
+custom_constants/margin_left = 90
+custom_constants/margin_bottom = 90
 
 [node name="Rows" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-margin_right = 1580.0
-margin_bottom = 1004.0
+margin_left = 90.0
+margin_top = 200.0
+margin_right = 2642.0
+margin_bottom = 1490.0
+custom_constants/separation = 50
 
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/Rows"]
-margin_right = 1580.0
+margin_right = 2552.0
 margin_bottom = 97.0
 custom_fonts/font = ExtResource( 1 )
 text = "Game Over"
@@ -37,12 +47,19 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/Rows"]
-margin_top = 101.0
-margin_right = 1580.0
-margin_bottom = 121.0
+[node name="RestartButton" type="Button" parent="PanelContainer/MarginContainer/Rows"]
+margin_top = 147.0
+margin_right = 2552.0
+margin_bottom = 202.0
+custom_fonts/font = ExtResource( 2 )
+text = "RESTART"
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/Rows"]
-margin_top = 125.0
-margin_right = 1580.0
-margin_bottom = 145.0
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/Rows"]
+margin_top = 252.0
+margin_right = 2552.0
+margin_bottom = 307.0
+custom_fonts/font = ExtResource( 2 )
+text = "QUIT"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/Rows/QuitButton" to="." method="_on_QuitButton_pressed"]
