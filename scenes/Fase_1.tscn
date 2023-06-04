@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Captura de Tela 2023-05-08 às 17.54.20 (1).png" type="Texture" id=1]
 [ext_resource path="res://scenes/rock-music-6211.mp3" type="AudioStream" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Backgounds/parallax8.png" type="Texture" id=5]
 [ext_resource path="res://Backgounds/NuvemSemFunfdo.png" type="Texture" id=6]
 [ext_resource path="res://Backgounds/Background_parallax1.png" type="Texture" id=7]
+[ext_resource path="res://coracao.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 96, 0, 96, 0, 96, 128, 96 )
@@ -62,6 +63,7 @@ autostart = true
 motion_mirroring = Vector2( 100, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1454, 604 )
 scale = Vector2( 4, 3 )
 texture = ExtResource( 7 )
 
@@ -97,5 +99,26 @@ motion_mirroring = Vector2( 5700, 0 )
 position = Vector2( 2416, 16 )
 scale = Vector2( 1.76154, 1 )
 texture = ExtResource( 6 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="vida" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 510, -222 )
+scale = Vector2( 0.0226473, 0.0244961 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="vida" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2( 563, -223 )
+scale = Vector2( 0.0216465, 0.0230963 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="vida" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2( 612.435, -225.062 )
+scale = Vector2( 0.0206999, 0.0223264 )
+texture = ExtResource( 8 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
