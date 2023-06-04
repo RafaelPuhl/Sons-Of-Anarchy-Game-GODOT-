@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/Xolonium.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.662745, 0.25098, 0.25098, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0, 0, 0, 1 )
+shadow_size = 50
+
+[node name="GameOverScreen" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 1600.0
+margin_bottom = 1024.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1590.0
+margin_bottom = 1014.0
+
+[node name="Rows" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+margin_right = 1580.0
+margin_bottom = 1004.0
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/Rows"]
+margin_right = 1580.0
+margin_bottom = 97.0
+custom_fonts/font = ExtResource( 1 )
+text = "Game Over"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/Rows"]
+margin_top = 101.0
+margin_right = 1580.0
+margin_bottom = 121.0
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/Rows"]
+margin_top = 125.0
+margin_right = 1580.0
+margin_bottom = 145.0

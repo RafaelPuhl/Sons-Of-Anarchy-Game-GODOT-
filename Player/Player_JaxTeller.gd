@@ -49,7 +49,6 @@ func _physics_process(delta):
 		sprite.frame = 0
 
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		print("Pulou")
 		velocidade.y = -1000
 		
 	if shooting == true:
@@ -63,8 +62,9 @@ func _on_AnimatedSprite_animation_finished() -> void:
 		shooting = true
 		print(shooting)
 		var p = bullet.instance()
+		p.direction = sign(velocidade.x) if velocidade.x != 0 else 1 # Direção da bala baseada na velocidade do player
 		p.global_position = global_position  + Vector2(50 * direction, 0)
-		owner.add_child(p)
+		owner.add_child(p) 
 
 
 
