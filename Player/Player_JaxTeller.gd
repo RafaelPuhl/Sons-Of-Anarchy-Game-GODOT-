@@ -3,7 +3,7 @@ export (PackedScene) var bullet : PackedScene
 
 const GRAVIDADE = 2500
 var velocidade = Vector2.ZERO
-var max_speed = 600
+var max_speed = 1000
 var desaceleration_rate = 200
 var desaceleration_timer = 0.0
 var shooting = false
@@ -56,15 +56,13 @@ func _physics_process(delta):
 		shooting = false
 
 func _on_AnimatedSprite_animation_finished() -> void:
-	print("Terminou")
-	print(shooting)
 	if sprite.animation == "fire":
 		shooting = true
-		print(shooting)
 		var p = bullet.instance()
 		p.direction = sign(velocidade.x) if velocidade.x != 0 else 1 # Direção da bala baseada na velocidade do player
 		p.global_position = global_position  + Vector2(50 * direction, 0)
 		owner.add_child(p) 
 
-
-
+func _on_Area2D_body_entered(body: Node) -> void:
+	if body.is_in_group("enemies"):
+		get_tree().change_scene("res://scenes/GameOverScreen.tscn")

@@ -62,8 +62,8 @@ stream = ExtResource( 2 )
 autoplay = true
 bus = "backgroundSound"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+[node name="Timer_enemies" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -110,6 +110,6 @@ scale = Vector2( 1.76154, 1 )
 texture = ExtResource( 6 )
 
 [node name="scene_limit" type="Position2D" parent="."]
-position = Vector2( 53176, 1144 )
+position = Vector2( 53648, 1232 )
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer_enemies" to="." method="_on_Timer_timeout"]

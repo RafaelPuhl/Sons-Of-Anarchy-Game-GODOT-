@@ -14,6 +14,5 @@ func _physics_process(delta):
 
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("enemies"):
-		print("A bala colidiu com um inimigo!") # Esta é a linha que adicionamos
 		queue_free() # Destrua a bala
 		body.queue_free() # Destrua o inimigo
