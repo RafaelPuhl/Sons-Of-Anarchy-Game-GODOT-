@@ -18,7 +18,8 @@ func newEnemy():
 	add_child(e1)
 
 func _on_Timer_timeout() -> void:
-	newEnemy()
+	if player.position.x < sceneLimit.position.x:
+		newEnemy()
 	
 func _physics_process(delta: float) -> void:
 	

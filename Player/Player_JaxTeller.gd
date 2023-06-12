@@ -3,7 +3,7 @@ export (PackedScene) var bullet : PackedScene
 
 const GRAVIDADE = 2500
 var velocidade = Vector2.ZERO
-var max_speed = 1000
+var max_speed = 1400
 var desaceleration_rate = 200
 var desaceleration_timer = 0.0
 var shooting = false
