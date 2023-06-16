@@ -110,6 +110,6 @@ scale = Vector2( 1.76154, 1 )
 texture = ExtResource( 6 )
 
 [node name="scene_limit" type="Position2D" parent="."]
-position = Vector2( 53648, 1232 )
+position = Vector2( 52944, 1128 )
 
 [connection signal="timeout" from="Timer_enemies" to="." method="_on_Timer_timeout"]

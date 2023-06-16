@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="SOA"
-run/main_scene="res://scenes/Fase_1.tscn"
+run/main_scene="res://scenes/MenuScreen.tscn"
 config/icon="res://icon.png"
 
 [display]

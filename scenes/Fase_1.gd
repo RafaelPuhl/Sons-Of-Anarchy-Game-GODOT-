@@ -8,6 +8,7 @@ var enemiesPosition = 0
 var sceneLimit : Position2D
 var timer
 var random = RandomNumberGenerator.new()
+var flag = false
 
 func _ready() -> void:
 	sceneLimit = get_node("scene_limit")
@@ -38,13 +39,11 @@ func _physics_process(delta: float) -> void:
 	if sceneLimit == null:
 		return
 	
-	if player.position.x > sceneLimit.position.x:
+	if player.position.x > sceneLimit.position.x and flag == false:
+		flag = true
 		print("YOU WINS")
-		timer = Timer.new()
-		add_child(timer)
-		timer.autostart = true
-		timer.wait_time = 5
-		timer.connect("timeout", self, "_timeout")
+		yield(get_tree().create_timer(5), "timeout")
+		get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 	
 func _timeout():
 	print("Timed out!")
