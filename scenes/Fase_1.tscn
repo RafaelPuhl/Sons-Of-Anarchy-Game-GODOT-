@@ -63,7 +63,7 @@ autoplay = true
 bus = "backgroundSound"
 
 [node name="Timer_enemies" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.225
 autostart = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
