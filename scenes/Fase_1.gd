@@ -2,6 +2,7 @@ extends Node2D
 
 var EnemyFear = preload("res://Enemies/Enemy_Fear.tscn")
 var EnemyA = preload("res://Enemies/Enemy_A.tscn")
+var EnemyC = preload("res://Enemies/Enemy_C.tscn")
 onready var enemiesTimer := $Timer_enemies as Timer
 onready var player := $Player_JaxTeller
 var enemiesPosition = 0
@@ -26,6 +27,12 @@ func newEnemyA():
 	eA.position = Vector2(enemiesPosition.x + 2900, 900) # Ajuste de acordo com as suas necessidades
 	add_child(eA)
 
+func newEnemyC():
+	var eC = EnemyC.instance()
+	enemiesPosition = player.global_position
+	eC.position = Vector2(enemiesPosition.x + 2900, 900) # Ajuste de acordo com as suas necessidades
+	add_child(eC)
+
 func _on_Timer_timeout() -> void:
 	if player.position.x < sceneLimit.position.x:
 		random.randomize()
@@ -33,6 +40,8 @@ func _on_Timer_timeout() -> void:
 			newEnemyFear()
 		elif random.randi_range(1, 2) == 2:
 			newEnemyA()
+		else:
+			newEnemyC()
 	
 func _physics_process(delta: float) -> void:
 	

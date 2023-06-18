@@ -13,7 +13,7 @@ border_width_bottom = 10
 border_color = Color( 0, 0, 0, 1 )
 shadow_size = 50
 
-[node name="GameOverScreen" type="CanvasLayer"]
+[node name="MenuScreen" type="CanvasLayer"]
 script = ExtResource( 4 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -37,21 +37,24 @@ custom_constants/margin_left = 90
 custom_constants/margin_bottom = 90
 
 [node name="Rows" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-margin_left = 1200.0
-margin_top = 1000.0
+margin_left = 90.0
+margin_top = 200.0
+margin_right = 2642.0
+margin_bottom = 1490.0
 custom_constants/separation = 50
 alignment = 1
 
 [node name="RestartButton" type="Button" parent="PanelContainer/MarginContainer/Rows"]
-margin_right = 308.0
-margin_bottom = 55.0
+margin_top = 565.0
+margin_right = 2552.0
+margin_bottom = 620.0
 custom_fonts/font = ExtResource( 2 )
 text = "START GAME"
 
 [node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/Rows"]
-margin_top = 105.0
-margin_right = 308.0
-margin_bottom = 160.0
+margin_top = 670.0
+margin_right = 2552.0
+margin_bottom = 725.0
 custom_fonts/font = ExtResource( 2 )
 text = "QUIT"
 

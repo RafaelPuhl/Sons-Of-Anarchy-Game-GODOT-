@@ -1,7 +1,7 @@
 extends KinematicBody2D
 export (PackedScene) var bullet : PackedScene
 
-const GRAVIDADE = 2500
+const GRAVIDADE = 1800
 var velocidade = Vector2.ZERO
 var max_speed = 900
 var desaceleration_rate = 200
