@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/chao.png" type="Texture" id=1]
 [ext_resource path="res://scenes/rock-music-6211.mp3" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Backgounds/Background_parallax1.png" type="Texture" id=7]
 [ext_resource path="res://Elements/garage.png" type="Texture" id=8]
 [ext_resource path="res://Elements/Friend/Friend.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Backgounds/pedra3-removebg-preview.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 96, 0, 96, 0, 96, 128, 96 )
@@ -35,6 +36,9 @@ points = PoolVector2Array( 128, 96, 0, 96, 0, 96, 128, 96 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 128.0
 
 [node name="SOA_GAME" type="Node2D"]
 script = ExtResource( 4 )
@@ -72,6 +76,7 @@ autostart = true
 motion_mirroring = Vector2( 100, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 257, 374 )
 scale = Vector2( 4, 3 )
 texture = ExtResource( 7 )
 
@@ -80,7 +85,7 @@ motion_scale = Vector2( 0.8, 1 )
 motion_mirroring = Vector2( 3000, 0 )
 
 [node name="montanhas" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 1160, 464 )
+position = Vector2( 1168, 466 )
 texture = ExtResource( 5 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -111,5 +116,16 @@ texture = ExtResource( 6 )
 
 [node name="scene_limit" type="Position2D" parent="."]
 position = Vector2( 52944, 1128 )
+
+[node name="pedra1" type="KinematicBody2D" parent="."]
+
+[node name="pedra1" type="Sprite" parent="pedra1"]
+position = Vector2( 952, 912 )
+scale = Vector2( 0.947222, 0.936111 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pedra1"]
+position = Vector2( 952, 968 )
+shape = SubResource( 3 )
 
 [connection signal="timeout" from="Timer_enemies" to="." method="_on_Timer_timeout"]
