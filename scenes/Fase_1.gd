@@ -3,6 +3,7 @@ extends Node2D
 var EnemyFear = preload("res://Enemies/Enemy_Fear.tscn")
 var EnemyA = preload("res://Enemies/Enemy_A.tscn")
 var EnemyC = preload("res://Enemies/Enemy_C.tscn")
+var EnemyShooter = preload("res://Enemies/Enemy_Shooter.tscn")
 onready var enemiesTimer := $Timer_enemies as Timer
 onready var player := $Player_JaxTeller
 var enemiesPosition = 0
@@ -32,14 +33,22 @@ func newEnemyC():
 	enemiesPosition = player.global_position
 	eC.position = Vector2(enemiesPosition.x + 2900, 900) # Ajuste de acordo com as suas necessidades
 	add_child(eC)
+	
+func newEnemyShooter():
+	var eS = EnemyShooter.instance()
+	enemiesPosition = player.global_position
+	eS.position = Vector2(enemiesPosition.x + 2900, 900) # Ajuste de acordo com as suas necessidades
+	add_child(eS)
 
 func _on_Timer_timeout() -> void:
 	if player.position.x < sceneLimit.position.x:
 		random.randomize()
-		if random.randi_range(1, 2) == 1:
+		if random.randi_range(1, 3) == 1:
 			newEnemyFear()
-		elif random.randi_range(1, 2) == 2:
+		elif random.randi_range(1, 3) == 2:
 			newEnemyA()
+		elif random.randi_range(1, 3) == 3:
+			newEnemyShooter()
 		else:
 			newEnemyC()
 	
@@ -52,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		flag = true
 		print("YOU WINS")
 		yield(get_tree().create_timer(5), "timeout")
-		get_tree().change_scene("res://scenes/GameOverScreen.tscn")
+		get_tree().change_scene("res://scenes/CongratulationsScreen.tscn")
 	
 func _timeout():
 	print("Timed out!")

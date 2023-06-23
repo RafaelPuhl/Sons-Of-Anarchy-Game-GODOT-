@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Enemies/Enemy_A.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/Enemy_Shooter.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/shooterEnemy.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=8]
@@ -68,7 +68,7 @@ radius = 40.0
 radius = 15.4839
 height = 32.8903
 
-[node name="Enemy_A" type="KinematicBody2D"]
+[node name="Enemy_Shooter" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 268
 script = ExtResource( 1 )
@@ -77,7 +77,7 @@ script = ExtResource( 1 )
 position = Vector2( 120, -80 )
 scale = Vector2( 1.04905, 0.917785 )
 frames = SubResource( 1 )
-frame = 1
+frame = 9
 playing = true
 flip_h = true
 
