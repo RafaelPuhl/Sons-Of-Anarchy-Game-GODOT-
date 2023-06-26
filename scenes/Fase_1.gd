@@ -8,12 +8,14 @@ onready var enemiesTimer := $Timer_enemies as Timer
 onready var player := $Player_JaxTeller
 var enemiesPosition = 0
 var sceneLimit : Position2D
+var sceneLimit2 : Position2D
 var timer
 var random = RandomNumberGenerator.new()
 var flag = false
 
 func _ready() -> void:
 	sceneLimit = get_node("scene_limit")
+	sceneLimit2 = get_node("scene_limit2")
 	player = get_node("Player_JaxTeller")
 
 func newEnemyFear():
@@ -47,7 +49,7 @@ func _on_Timer_timeout() -> void:
 			newEnemyFear()
 		elif random.randi_range(1, 3) == 2:
 			newEnemyA()
-		elif random.randi_range(1, 3) == 3:
+		elif random.randi_range(1, 3) == 3 and player.position.x > sceneLimit2.position.x:
 			newEnemyShooter()
 		else:
 			newEnemyC()

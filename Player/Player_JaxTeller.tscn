@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Fundo de A22 Removido.png" type="Texture" id=1]
 [ext_resource path="res://Player/Fundo de A11 Removido.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Player/Fundo de B2 Removido.png" type="Texture" id=5]
 [ext_resource path="res://Player/Fundo de B4 Removido.png" type="Texture" id=6]
 [ext_resource path="res://Player/Fundo de B3 Removido.png" type="Texture" id=7]
+[ext_resource path="res://scenes/motorsound.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Player/Fundo de B5 Removido.png" type="Texture" id=9]
 [ext_resource path="res://Player/Fundo de B1 Removido.png" type="Texture" id=10]
 [ext_resource path="res://Player/shotgun-firing-4-6746.mp3" type="AudioStream" id=12]
@@ -66,11 +67,17 @@ position = Vector2( 161, 10 )
 shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 1000, -650 )
+offset = Vector2( 600, -650 )
 current = true
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+pitch_scale = 1.02
+bus = "SFX"
+
+[node name="MotorSound" type="AudioStreamPlayer" parent="."]
+process_priority = -1
+stream = ExtResource( 8 )
 pitch_scale = 1.02
 bus = "SFX"
 
