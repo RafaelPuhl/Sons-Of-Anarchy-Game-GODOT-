@@ -16,3 +16,4 @@ func _on_Bullet_body_entered(body):
 	if body.is_in_group("enemies"):
 		queue_free() # Destrua a bala
 		body.queue_free() # Destrua o inimigo
+		Global.score += 10
