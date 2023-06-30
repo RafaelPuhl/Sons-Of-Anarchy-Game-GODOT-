@@ -55,6 +55,7 @@ func _physics_process(delta):
 	if shooting == true:
 		shootSound.play()
 		shooting = false
+		Global.score -= 1
 
 func _on_AnimatedSprite_animation_finished() -> void:
 	if sprite.animation == "fire":
